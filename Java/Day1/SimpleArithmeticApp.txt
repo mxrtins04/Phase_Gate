@@ -1,0 +1,43 @@
+import java.util.scanner;
+
+public class SimpleArithmeticApp{
+	public static void main(String[] args){
+
+int score = 0;
+int level = 1;
+
+for( int level = 1; level <= 10; level++){
+	int first_number = math.random * 1000;
+	int second_number = math.random * 10;
+	int trials = 2;
+
+	
+	if( second_number > first_number){
+			int temp = first_number;
+			int temp_2 = second_number;
+
+			int second_number = temp;
+			int first_number = temp_2;
+			return (first_number);}
+	
+	while (trials > 1) {
+		int correct_answer = first_number - second_number;
+
+		System.out.printf("What is %d - %s?", first_number, second_number);
+		int input = System.nextInt();
+		if (correct_answer == answer){
+			score += 1;
+			break;}
+		else{
+			System.out.print("Wrong answer... You have 1 trial left for this question");
+			trials -= 1;}
+		if (trials == 0){
+			String confirmation = input("You have 0 trials left, would you like to answer more questions?(y/n) ");
+			if( confirmation.equals("no"))
+				break;}
+
+				}
+			
+}}}
+
+	
