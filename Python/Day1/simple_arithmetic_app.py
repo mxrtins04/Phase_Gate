@@ -30,7 +30,7 @@ while( level <= 10 ):
 		
 	else:
 		print("Wrong Answer")
-		confirmation = input("You have 0 trials left, would you like to answer more questions?(y/n) ")
+		
 				
 			
 
