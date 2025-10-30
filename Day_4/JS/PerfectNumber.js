@@ -1,23 +1,23 @@
-function isPerfectSquare(number) {
-	let [] number = {4, 25}
+function isPerfectSquare(numbers) {
+	
 	
 
-int count = 0;
-		for( index = 0; index < numbers.length; index++ ){
+let count = 0;
+		for(let index = 0; index < numbers.length; index++ ){
 			number = numbers[index];
 		
 			if (number / number == 1){
-				for( int range = 1; range < number; range++){
-					square = range * range;
+				for(let range = 1; range < number; range++){
+					let square = range * range;
 					if (square == number)
 						count++;
-						System.out.print(count);
 						}}}	
 				if (count == numbers.length)
 					return("True");
 				else
 					return("False");
-
+}
+let number = [4, 25]
 console.log(isPerfectSquare(number));
 
 /*if (number < 0) 
