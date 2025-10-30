@@ -4,5 +4,8 @@ public static void main(String[] args){
 
 	Palindrome function = new Palindrome();
 
-	System.out.print(function.checkPalindrome(words));
+	String[] newArray = function.checkPalindrome(words);
+	for( int i = 0; i < newArray.length; i++){
+		System.out.print(newArray[i]);}
+	
 }}
