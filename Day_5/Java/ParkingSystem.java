@@ -20,11 +20,11 @@ public static void main(String[] args){
 	while (true){
 		
 		System.out.print(menu);
-		int option1 = input.nextInt();
-		Object option = option1;
+		int option = input.nextInt();
+
 
 		
-		switch((Integer) option){
+		switch(option){
 			case 1 -> {
 				availableSpace = function.displayAvailableSpots(parkingSpace);
 				System.out.println("Hi user, these are the available spots.");
