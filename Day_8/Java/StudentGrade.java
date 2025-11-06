@@ -110,20 +110,24 @@ public static void main(String [] args){
 		
 }
 
-		System.out.println("\nSTUDENT SUMMARY");
+		System.out.println("\nCLASS SUMMARY");
 
 
 		int highestTotal = totalScoresOfStudents.get(0);
 		int lowestTotal = totalScoresOfStudents.get(0);
 		String bestStudent = names.get(0);
+		int subjectScoreTotal = 0;
 		String worstStudent = names.get(0);
 		int classTotal = 0;
 		int highestScore = 0;
-		int lowestScore = 0;
+		int lowestScore = 100;
+		double subjectAverage = 0.0;
+		int pass = 0;
+		int fail = 0;
 		String highestStudent = names.get(0);
 		String lowestStudent = names.get(0);
 
-		for (int count = 0; count < totalScoresOfStudents.size(); count++) {
+		for (int count = 0; count < totalScoresOfStudents.size(); count++) { 
 			int total = totalScoresOfStudents.get(count);
 			classTotal += total;
 
@@ -144,10 +148,7 @@ public static void main(String [] args){
 		System.out.printf("Best student: %s => Total: %d%n", bestStudent, highestTotal);
 		System.out.printf("Worst student: %s => Total: %d%n", worstStudent, lowestTotal);
 		
-		System.out.println("===========================\n");
 
-		System.out.println("\nCLASS SUMMARY");
-		System.out.println("===========================");
 		System.out.printf("Class total score: %d%n", classTotal);
 		System.out.printf("Class average score: %.2f%n", classAverage);
 		System.out.println("===========================\n");
@@ -160,10 +161,18 @@ public static void main(String [] args){
 			System.out.printf("%nSubject%d SUMMARY%n", subject + 1);
 			System.out.println("===========================");
 		
-			int firstIndex = 0;
-			for( firstIndex = 0; firstIndex < lengthOfRecord; firstIndex++ ){
+			
+			for( int firstIndex = 0; firstIndex < lengthOfRecord; firstIndex++ ){
 	
 				int subjectScore = studentsRecord[firstIndex][subject];
+				if (subjectScore >= 50)
+					pass += 1;
+				else
+					fail +=1;
+
+				subjectScoreTotal += subjectScore;
+				subjectAverage = (double) subjectScoreTotal / firstIndex;
+
 				if (subjectScore > highestScore){
 					highestScore = subjectScore;
 					highestStudent = names.get(firstIndex);}
@@ -171,10 +180,18 @@ public static void main(String [] args){
 				if( subjectScore < lowestScore ){
 					lowestScore = subjectScore;
 					lowestStudent = names.get(firstIndex);}
+				
 			}
  
 		System.out.printf("Highest scoring student is: %s scoring %d%n", highestStudent, highestScore);
 		System.out.printf("%nLowest scoring student is: %s scoring %d", lowestStudent, lowestScore);
+		System.out.printf("%nTotal score is: %d", subjectScoreTotal);
+		System.out.printf("%nAverage score is: %f", subjectAverage);
+		System.out.printf("%nNumber of passes: %d", pass);
+		System.out.printf("%nNumber of fails: %d", fail);
+		lowestScore = 100;
+		pass = 0;
+		fail = 0;
 		}
 	
 }
