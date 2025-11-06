@@ -111,8 +111,9 @@ public static void main(String [] args){
 }
 
 		System.out.println("\nCLASS SUMMARY");
-
-
+		
+		int highestPass = 0;
+		int hardestSubject = 0;
 		int highestTotal = totalScoresOfStudents.get(0);
 		int lowestTotal = totalScoresOfStudents.get(0);
 		String bestStudent = names.get(0);
@@ -126,6 +127,8 @@ public static void main(String [] args){
 		int fail = 0;
 		String highestStudent = names.get(0);
 		String lowestStudent = names.get(0);
+		int easiestSubject = 0;
+		int highestFail = 0;
 
 		for (int count = 0; count < totalScoresOfStudents.size(); count++) { 
 			int total = totalScoresOfStudents.get(count);
@@ -180,6 +183,14 @@ public static void main(String [] args){
 				if( subjectScore < lowestScore ){
 					lowestScore = subjectScore;
 					lowestStudent = names.get(firstIndex);}
+
+				if (fail > highestFail){
+					highestFail = fail;
+					hardestSubject = subject;}
+
+				if (pass > highestPass){
+					highestPass = pass;
+					easiestSubject = subject;}
 				
 			}
  
@@ -194,5 +205,8 @@ public static void main(String [] args){
 		fail = 0;
 		}
 	
+		System.out.printf("%nThe hardest subject is subject %d, with %d fails", hardestSubject + 1, highestFail);
+		System.out.printf("%nThe easiest subject is subject %d, with %d passes", easiestSubject + 1, highestPass );
+
 }
 }
