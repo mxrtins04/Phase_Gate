@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudentGradeFunctions{
+	
+	ArrayList<Integer> scoresOfStudents = new ArrayList<>();
+	ArrayList<Integer> position = new ArrayList<>();
+	ArrayList<Integer> totalScoresOfStudents = new ArrayList<>();
+	ArrayList<Integer> averageScores = new ArrayList<>();
 
 	public Integer validateScore(String score){
 		try{
@@ -33,6 +38,33 @@ public class StudentGradeFunctions{
 			if(!Character.isLetter(c))
 			return(null);}
 		return name;
+	}
+
+	public int getStudentTotal(int index, int [][]studentRecord, int total, ArrayList<Integer> totalScoresOfStudents){
+		for( int score : studentRecord[index] ){
+			total += score;}
+		totalScoresOfStudents.add(total);
+		return total;
+		}
+	
+	public double calculateStudentAverage(int index, int [][]studentRecord, int total){
+		int length = studentRecord[index].length;
+		double average = (double) total / length;
+		return average;
+	}
+
+	public ArrayList<Integer> getPositionOfStudent( ArrayList<Integer> position, ArrayList<Integer> total){
+		
+		for( int number : total ){
+			Integer rank = 0;
+			int testCase = number;
+			for( int number1 : total ){
+				if (testCase <= number1)
+				rank++;
+			}
+		position.add(rank);
+		}
+		return position;
 	}
 		
 }
